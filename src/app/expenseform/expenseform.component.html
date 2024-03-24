@@ -1,0 +1,36 @@
+<h2>expenseform works!</h2>
+
+<form [formGroup]="expenseForm">
+  <div class="form-group">
+
+    <div class="controls">
+      <input type="date"  class="floatLabel" formControlName="expdate" placeholder="Expense Date">
+
+    </div>
+
+    <div class="controls">
+      <select formControlName="expcat">
+        <option [ngValue]="null" disabled>Select Category</option>
+        <option *ngFor="let cat of categories" [ngValue]="cat.categoryname">{{cat.categoryname}}</option>
+      </select>
+
+    </div>
+
+    <div class="controls">
+      <input type="number" step="any"  formControlName="expamount" placeholder="Amount">
+
+    </div>
+
+    <div class="controls">
+      <input type="text" formControlName="expremark" placeholder="Remark">
+
+    </div>
+
+    <div class="controls">
+      <button class="button" (click)="onSubmitExpense()" type="button">Submit Expense</button>
+    </div>
+
+
+
+  </div>
+</form>
