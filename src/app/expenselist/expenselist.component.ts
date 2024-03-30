@@ -14,7 +14,7 @@ import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
   selector: 'app-expenselist',
   standalone:true,
 
-  imports: [HttpClient, NgFor, MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule],
+  imports: [NgFor, MatProgressBarModule, MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule],
    templateUrl: './expenselist.component.html',
   styleUrls: ['./expenselist.component.css']
 })
@@ -28,7 +28,6 @@ export class ExpenselistComponent implements OnInit {
   amount : number = 0;
   total : number = 0;
   obj2 : any[] = [];
-   longText = "slkafsdlkjfsdkjfsdk"
 
  
   constructor(private http : HttpClient){
@@ -39,7 +38,6 @@ export class ExpenselistComponent implements OnInit {
   }
 
   fetchData(){
-    debugger;
     this.http.get('http://localhost:8080/expense/getexpenses/', { headers: new HttpHeaders({ 'session': '5a4c50b645e2964054e516c8' }) })
       .subscribe(data => {
         //console.log(data);

@@ -1,11 +1,13 @@
-<mat-card >
+<div>
+    <p>Total Expense for this month : {{amount}}</p>
+</div>
+  <div><mat-card *ngFor="let exp of obj2">
     <mat-card-header>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      <mat-card-title>Shiba Inu</mat-card-title>
+       
+      <mat-card-subtitle>{{exp.expcat}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>This card has divider and indeterminate progress as footer</p>
-      <p>{{ longText }}</p>
+      <p>{{exp.totalexpamount}}</p>
       <mat-divider></mat-divider>
     </mat-card-content>
     <mat-card-actions>
@@ -13,35 +15,9 @@
       <button mat-button>SHARE</button>
     </mat-card-actions>
     <mat-card-footer>
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </mat-card-footer>
-  </mat-card>
-  
-<div class="container">
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Expense</th>
-                <th>Amount</th>
-                <th>Remark</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let exp of obj2">
-                
-<!--                 <td>{{exp.expdate.split("T", 1)[0]}} </td>
-                <td>{{exp.expcat}}</td>
-                <td>{{exp.expamount}}</td>
-                <td>{{exp.expremark}}</td> -->
-                <td>{{exp.expcat}}</td>
-                <td>{{exp.totalexpamount}}</td>
-            </tr>
-            <tr>"Total Amount " + {{amount}}</tr>
-        </tbody>
-    </table>
-</div>
-
+  </mat-card></div>
 
 
 <div class="container">
