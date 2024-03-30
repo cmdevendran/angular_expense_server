@@ -5,6 +5,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule, JsonPipe, NgFor } from '@angular/common';
 import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
+import { nodeserver } from '../../env';
 
 
 
@@ -38,7 +39,7 @@ export class ExpenselistComponent implements OnInit {
   }
 
   fetchData(){
-    this.http.get('http://localhost:8080/expense/getexpenses/', { headers: new HttpHeaders({ 'session': '5a4c50b645e2964054e516c8' }) })
+    this.http.get(nodeserver+'/expense/getexpenses/', { headers: new HttpHeaders({ 'session': '5a4c50b645e2964054e516c8' }) })
       .subscribe(data => {
         //console.log(data);
         this.expenses = JSON.parse(JSON.stringify(data));
@@ -71,6 +72,9 @@ export class ExpenselistComponent implements OnInit {
       })
     
   }
+
+  getItemOfExpCat(expcat:any){}
+
 
   
 };

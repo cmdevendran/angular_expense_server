@@ -61,6 +61,7 @@ export class ExpenseformComponent {
       nodeserver+'/expense/postexp/',JSON.stringify(obj),
       {headers: new HttpHeaders({
         'session' : session,
+        'Access-Control-Allow-Origin':'*',
         'Content-Type':  'application/json',
         })}
     ).subscribe((res:any)=>{
