@@ -6,24 +6,29 @@ import { ExpenseformComponent } from './expenseform/expenseform.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ExpenselistComponent } from './expenselist/expenselist.component';
 import { FormsModule } from '@angular/forms';
-import { ShowexpenseComponent } from './showexpense/showexpense.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditexpenseComponent } from './editexpense/editexpense.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpenseformComponent,
-    ShowexpenseComponent,
+    EditexpenseComponent
+
 
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule, 
+    MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule,
-    ExpenselistComponent
+   
   ],
   providers: [],
   bootstrap: [AppComponent],
