@@ -1,0 +1,30 @@
+
+<mat-icon aria-hidden="false" class="material-icons red600" aria-label="Example home icon" fontIcon="arrow_back" (click)="backClicked()"></mat-icon>
+
+
+  <div class="body">
+    <h3>{{expenses[0].expcat}}</h3>
+</div>
+<div><mat-card *ngFor="let exp of expenses"  >
+    <mat-card-header>
+       
+      <mat-card-subtitle>{{exp.expdate.split("T", 1)[0]}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+     
+      <p><label>Amount : $</label>{{exp.expamount}}</p>
+      <p>{{exp.expremark}}</p>
+    
+    </mat-card-content>
+    
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="editExpense(exp)">Edit</button>
+      <button mat-raised-button color="accent" (click)="deleteExpense(exp)">Delete</button>
+      </mat-card-actions>
+   
+    <mat-divider></mat-divider>
+  
+  </mat-card></div> 
+
+
+

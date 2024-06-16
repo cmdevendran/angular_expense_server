@@ -5,12 +5,9 @@ import { OnInit, inject } from '@angular/core';
 import {nodeserver} from '../../env';
 import {session} from '../../env';
 import { Router } from '@angular/router';
-
-
-
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule, NgFor } from '@angular/common';
-import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
+import {HttpClient,  HttpHeaders} from '@angular/common/http';
 
 
 @Component({
@@ -29,7 +26,7 @@ export class ExpenseformComponent {
   });
 
 
-  constructor (private http:HttpClient, private router : Router){}
+  constructor (private snackBar: MatSnackBar, private http:HttpClient, private router : Router){}
 
   httpClient = inject(HttpClient)
   data : any;
@@ -61,11 +58,14 @@ export class ExpenseformComponent {
       nodeserver+'/expense/postexp/',JSON.stringify(obj),
       {headers: new HttpHeaders({
         'session' : session,
+        'Access-Control-Allow-Origin':'*',
         'Content-Type':  'application/json',
         })}
     ).subscribe((res:any)=>{
-      
-        alert("Expense saved");
+      this.snackBar.open("Expense Saved", "OK", {
+        duration: 2000
+      });
+      //  alert("Expense saved");
         this.expenseForm.reset();
        // this.router.navigateByUrl('expense');
       
