@@ -151,6 +151,24 @@ export class ExpenselistComponent {
   }
 
  
+  download(){
+    const items = this.expenses;
+    const replacer = (key:any, value:any) => value === null ? '' : value // specify how you want to handle null values here
+    const header = Object.keys(items[0])
+    var csv = items.map((row:any) => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
+    csv.unshift(header.join(','))
+    let goodcsv = csv.join('\r\n')
+
+    console.log(goodcsv);
+    
+  }
+
+  gotoExpense(){
+    this.router.navigate(['/expense'])
+
+  }
+
+ 
 
     
   

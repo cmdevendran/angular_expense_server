@@ -4,7 +4,9 @@
 <!-- 
     
  -->
-
+<div>
+  <button class="button" (click)="gotoExpense()" type="button">FillExpense</button>
+</div>
 
 <form [formGroup]="expenseForm">
   <div class="controls">
@@ -20,13 +22,18 @@
 
    <div class="controls">
      <button class="button" (click)="onGetExpense()" type="button">Get Expense</button>
-   </div>
+    <BR>
+      <button class="button" (click)="download()" type="button">Download Expense</button>
+    
+    </div>
+
 </form>
 
 
 <div>
   <p>Total Expense for this month : {{amount}}</p>
 </div>
+
 <div>
   <mat-card *ngFor="let exp of obj2" (click)="getItemOfExpCat(exp.expcat)">
   <mat-card-header >
