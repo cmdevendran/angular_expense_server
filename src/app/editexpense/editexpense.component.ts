@@ -14,11 +14,10 @@ import { CommonModule } from '@angular/common';
 import {HttpClient,  HttpHeaders} from '@angular/common/http';
 
 @Component({
-  selector: 'app-editexpense',
- 
-
-  templateUrl: './editexpense.component.html',
-  styleUrl: './editexpense.component.css'
+    selector: 'app-editexpense',
+    templateUrl: './editexpense.component.html',
+    styleUrl: './editexpense.component.css',
+    standalone: false
 })
 export class EditexpenseComponent {
   obj : any;

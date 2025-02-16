@@ -15,12 +15,10 @@ import { CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 
 
 @Component({
-  selector: 'app-individuallist',
-  standalone:true,
-
-  imports: [NgFor,  MatCardModule, MatDividerModule, MatButtonModule,MatIconModule],
-  templateUrl: './individuallist.component.html',
-  styleUrls: ['./individuallist.component.css']
+    selector: 'app-individuallist',
+    imports: [NgFor, MatCardModule, MatDividerModule, MatButtonModule, MatIconModule],
+    templateUrl: './individuallist.component.html',
+    styleUrls: ['./individuallist.component.css']
 })
 export class IndividuallistComponent {
   httpClient = inject(HttpClient)

@@ -18,12 +18,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-expenselist',
-  standalone:true,
-
-  imports: [NgFor,ReactiveFormsModule,MatGridListModule, MatProgressBarModule, MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule],
-  templateUrl: './expenselist.component.html',
-  styleUrls: ['./expenselist.component.css']
+    selector: 'app-expenselist',
+    imports: [NgFor, ReactiveFormsModule, MatGridListModule, MatProgressBarModule, MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule],
+    templateUrl: './expenselist.component.html',
+    styleUrls: ['./expenselist.component.css']
 })
 export class ExpenselistComponent {
   

@@ -11,9 +11,10 @@ import {HttpClient,  HttpHeaders} from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-expenseform',
-  templateUrl: './expenseform.component.html',
-  styleUrls: ['./expenseform.component.css']
+    selector: 'app-expenseform',
+    templateUrl: './expenseform.component.html',
+    styleUrls: ['./expenseform.component.css'],
+    standalone: false
 })
 export class ExpenseformComponent {
   
