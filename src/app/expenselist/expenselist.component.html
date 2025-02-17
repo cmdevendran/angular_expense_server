@@ -8,6 +8,11 @@
   <button class="button" (click)="gotoExpense()" type="button">FillExpense</button>
 </div>
 
+
+ 
+<input type="button" value="Download CSV" (click)="download()" color="red" style="float: right;">
+
+
 <form [formGroup]="expenseForm">
   <div class="controls">
     <input type="date"  class="floatLabel" formControlName="startDate" placeholder="startDate">
@@ -19,13 +24,12 @@
 
     </div>
 
-
+<div align:centre>
    <div class="controls">
      <button class="button" (click)="onGetExpense()" type="button">Get Expense</button>
-    <BR>
-      <button class="button" (click)="download()" type="button">Download Expense</button>
-    
-    </div>
+   </div>
+   
+  </div>
 
 </form>
 

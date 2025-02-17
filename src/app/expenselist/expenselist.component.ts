@@ -156,6 +156,15 @@ export class ExpenselistComponent {
     var csv = items.map((row:any) => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
     csv.unshift(header.join(','))
     let goodcsv = csv.join('\r\n')
+    const blob = new Blob([goodcsv], { type: 'text/csv' });
+
+  // Create a link element
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = "expense.csv";
+
+  // Trigger the download by simulating a click
+  link.click();
 
     console.log(goodcsv);
     
