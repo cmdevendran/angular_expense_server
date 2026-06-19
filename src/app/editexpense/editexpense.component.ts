@@ -78,7 +78,7 @@ export class EditexpenseComponent {
   }
 
   fetchData(){
-    this.http.get(nodeserver+'/expense/getcat/',{headers:new HttpHeaders({'session':session})})
+    this.http.get('/api/expense/getcat/',{headers:new HttpHeaders({'session':session})})
     .subscribe(data=>{
       //console.log(data);
       this.data = data;
@@ -94,7 +94,7 @@ export class EditexpenseComponent {
     console.log("SUBMITTED " + JSON.stringify(obj))
     
      this.http.post(
-      nodeserver+'/expense/editexp/',JSON.stringify(obj),
+      '/api/expense/editexp/',JSON.stringify(obj),
       {headers: new HttpHeaders({
         'session' : session,
         'Access-Control-Allow-Origin':'*',

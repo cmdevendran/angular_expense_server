@@ -45,7 +45,7 @@ export class IndividuallistComponent {
 
   async deleteExpense(exp:any){
     console.log("delete Expense" + exp)
-    this.http.post(nodeserver+'/expense/deleteexp/',JSON.stringify(exp),{ headers: new HttpHeaders({ 
+    this.http.post('/api/expense/deleteexp/',JSON.stringify(exp),{ headers: new HttpHeaders({ 
       'session': '5a4c50b645e2964054e516c8',
       'Access-Control-Allow-Origin':'*',
       'Content-Type':  'application/json',

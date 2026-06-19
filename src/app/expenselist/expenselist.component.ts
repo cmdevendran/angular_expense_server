@@ -57,8 +57,10 @@ export class ExpenselistComponent {
   fetchData(){
     this.amount = 0;
   
-    this.http.get(nodeserver+'/expense/getexpenses/', { headers: new HttpHeaders({ 'session': '5a4c50b645e2964054e516c8' }) })
-      .subscribe(data => {
+   // this.http.get(nodeserver+'/expense/getexpenses/', { headers: new HttpHeaders({ 'session': '5a4c50b645e2964054e516c8' }) })
+   this.http.get('/api/expense/getexpenses/', { headers: new HttpHeaders({ 'session': '5a4c50b645e2964054e516c8' }) })
+
+   .subscribe(data => {
         //console.log(data);
         this.expenses = JSON.parse(JSON.stringify(data));
         console.log("Expenses : Report : "+JSON.stringify(this.expenses))
@@ -101,7 +103,7 @@ export class ExpenselistComponent {
     })
 
      
-     this.http.post(nodeserver+'/expense/getexpenses/',JSON.stringify(obj),{ headers: new HttpHeaders({ 
+     this.http.post('/api/expense/getexpenses/',JSON.stringify(obj),{ headers: new HttpHeaders({ 
       'session': '5a4c50b645e2964054e516c8',
       'Access-Control-Allow-Origin':'*',
       'Content-Type':  'application/json',

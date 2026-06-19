@@ -41,7 +41,7 @@ export class ExpenseformComponent {
   }
 
   fetchData(){
-    this.http.get(nodeserver+'/expense/getcat/',{headers:new HttpHeaders({'session':session})})
+    this.http.get('/api/expense/getcat/',{headers:new HttpHeaders({'session':session})})
     .subscribe(data=>{
       //console.log(data);
       this.data = data;
@@ -56,7 +56,7 @@ export class ExpenseformComponent {
     const obj = this.expenseForm.value;
     
     this.http.post(
-      nodeserver+'/expense/postexp/',JSON.stringify(obj),
+      '/api/expense/postexp/',JSON.stringify(obj),
       {headers: new HttpHeaders({
         'session' : session,
         'Access-Control-Allow-Origin':'*',
