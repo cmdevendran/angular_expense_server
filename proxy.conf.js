@@ -1,6 +1,6 @@
 module.exports = {
   '/api': {
-    target: 'http://127.0.0.1:8080',
+    target: 'http://expense_APISERVER:3000' //'http://127.0.0.1:3000',
     secure: false,
     changeOrigin: true,
     logLevel: 'debug',

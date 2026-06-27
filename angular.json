@@ -63,7 +63,7 @@
           "options": {
             "host": "0.0.0.0",
             "port": 4200,
-            "proxyConfig": "proxy.conf.js"
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -71,7 +71,7 @@
             },
             "development": {
               "buildTarget": "expense_website:build:development",
-              "proxyConfig": "proxy.conf.js"
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
